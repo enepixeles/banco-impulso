@@ -1,0 +1,16 @@
+a {
+    text-decoration: none !important;
+    color: inherit; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fuente-principal;
+    background-color: $color-fondo;
+    color: #333;
+}

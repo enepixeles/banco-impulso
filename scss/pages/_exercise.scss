@@ -1,0 +1,49 @@
+.table-container {
+    background-color: $color-blanco;
+    border-radius: 20px; 
+    overflow: hidden; 
+
+    &__header {
+        background-color: #1a1a1a; 
+        color: white;
+        
+        th {
+            padding: 1.2rem 1rem !important;
+            border: none;
+            font-weight: 400;
+        }
+    }
+}
+
+.status {
+    &--completed { color: #2d7a6e; font-weight: 600; }
+    &--failed { color: #e74c3c; font-weight: 600; }
+}
+
+.export-pdf {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    i {
+        font-size: 1.1rem;
+        color: #444;
+    }
+
+    &:hover {
+        color: black;
+    }
+}
+
+.icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}

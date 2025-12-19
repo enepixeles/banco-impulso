@@ -1,0 +1,4 @@
+// Para que la web se adapte a desktop
+@mixin desktop {
+    @media (min-width: 992px) { @content; }
+}

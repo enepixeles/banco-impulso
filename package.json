@@ -1,0 +1,11 @@
+{
+  "name": "banco-impulso-la-tribu",
+  "version": "1.0.0",
+  "description": "Plataforma financiera para la comunidad de La Tribu",
+  "main": "index.html",
+  "scripts": {
+    "compile-sass": "sass scss/main.scss css/main.css --watch"
+  },
+  "author": "Aubrey Sabina",
+  "license": "ISC"
+}

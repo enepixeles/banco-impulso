@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Impulso | Mi Progreso</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div class="dashboard">
+        
+        <aside class="sidebar offcanvas-lg offcanvas-start border-end" tabindex="-1" id="sidebarMenu">
+            <div class="offcanvas-header d-lg-none">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu"></button>
+            </div>
+            
+            <div class="offcanvas-body flex-column p-4">
+                <div class="sidebar__logo d-flex align-items-center mb-5">
+                    <i class="bi bi-send sidebar__logo-icon me-2"></i>
+                    <div>
+                        <h2 class="sidebar__logo-title m-0">Banco Impulso</h2>
+                        <p class="sidebar__logo-subtitle m-0">La Tribu</p>
+                    </div>
+                </div>
+
+                <p class="sidebar__section-title">MAIN MENU</p>
+
+                <nav class="sidebar__nav">
+                    <ul class="list-unstyled">
+                        <li class="sidebar__item"><a href="#" class="sidebar__link">Prioridades</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link sidebar__link--active">Mi Progreso</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link">Mis Movimientos</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link">Metas</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link">Organizar</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link">Aprender</a></li>
+                        <li class="sidebar__item"><a href="#" class="sidebar__link">Recompensas</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="dashboard__content flex-grow-1">
+            
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-dark d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    
+                    <div class="header__greeting">
+                        <h3 class="sal m-0">Hola, Andrés!</h3>
+                        <p class="text-muted small m-0 d-none d-sm-block">Gestiona tus finanzas con calma y foco.</p>
+                    </div>
+                </div>
+
+                <div class="header__actions d-flex align-items-center gap-2">
+                    <button class="btn header-btn"><i class="bi bi-search"></i></button>
+                    <button class="btn header-btn"><i class="bi bi-bell"></i></button>
+                    <img src="img/avatar.jpg" class="rounded-circle ms-2" width="45" height="45" alt="Avatar">
+                </div>
+            </header>
+
+            <section class="mb-5">
+                <h2 class="hero-title">Transforma tus impulsos en decisiones positivas.</h2>
+            </section>
+
+            <section class="row g-4 mb-5">
+                <div class="col-12 col-md-4">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <span class="text-muted small fw-bold">Ingresos</span>
+                        <h2 class="fw-bold mt-2">$20.000</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <span class="text-muted small fw-bold">Gastos Totales</span>
+                        <h2 class="fw-bold mt-2">$18.000</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card p-4 border-0 shadow-sm rounded-4 bg-dark text-white">
+                        <span class="small opacity-75">Saldo</span>
+                        <h2 class="fw-bold mt-2">$2.000</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="transaction-section mb-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold m-0">Movimientos que te hacen avanzar</h4>
+                </div>
+
+                <div class="table-container shadow-sm">
+                    <div class="table-responsive">
+                        <table class="table align-middle m-0">
+                            <thead class="table-container__header">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Descripción</th>
+                                    <th>Cuenta</th>
+                                    <th>Categoría</th>
+                                    <th>Monto</th>
+                                    <th>Status</th>
+                                    <th>Exportar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactionBody">
+                                <tr>
+                                    <td>Feb 13, 2025, <br><small class="text-muted">09:30 AM</small></td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="img/logo-disney.jpg" class="rounded-circle me-2" alt="">
+                                            <div><small class="text-muted d-block">Subscripción</small> <strong>Disney</strong></div>
+                                        </div>
+                                    </td>
+                                    <td>Pago Disney</td>
+                                    <td>Subscripción</td>
+                                    <td><strong>$3.500</strong></td>
+                                    <td><span class="status--completed">Completada</span></td>
+                                    <td><a href="#" class="export-pdf"><i class="bi bi-file-pdf"></i> PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Feb 12, 2025, <br><small class="text-muted">09:30 AM</small></td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="img/avatar-estefania.jpg" class="rounded-circle me-2" alt="">
+                                            <div><small class="text-muted d-block">Transferencia a</small> <strong>Estefanía Silva</strong></div>
+                                        </div>
+                                    </td>
+                                    <td>Cuenta Banco (****4673)</td>
+                                    <td>Familia y Amigos</td>
+                                    <td><strong>$5.000</strong></td>
+                                    <td><span class="status--completed">Completada</span></td>
+                                    <td><a href="#" class="export-pdf"><i class="bi bi-file-pdf"></i> PDF</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Feb 8, 2025, <br><small class="text-muted">09:30 AM</small></td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="img/avatar-maria.jpg" class="rounded-circle me-2" alt="">
+                                            <div><small class="text-muted d-block">Transfer to</small> <strong>Maria Orellana</strong></div>
+                                        </div>
+                                    </td>
+                                    <td>Cuenta Banco (****7854)</td>
+                                    <td>Family & Friends</td>
+                                    <td><strong>$12.000</strong></td>
+                                    <td><span class="status--failed">Error</span></td>
+                                    <td><a href="#" class="export-pdf"><i class="bi bi-file-pdf"></i> PDF</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row gy-5">
+                            <div class="col-12 col-lg-4">
+                                <div class="footer__brand">
+                                    <h2 class="h4 fw-bold mb-0">Banco Impulso</h2>
+                                    <p class="footer__subtitle mb-4">La Tribu</p>
+                                    
+                                    <div class="footer__copy mt-5">
+                                        <p class="mb-0">Copyright 2025 Andrés Díaz</p>
+                                        <p>Todos los derechos reservados</p>
+                                    </div>
+
+                                    <div class="footer__socials d-flex gap-3 mt-4">
+                                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                        <a href="#"><i class="bi bi-facebook"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-8">
+                                <div class="row">
+                                    <div class="col-6 col-md-4">
+                                        <h6 class="footer__title">Menú</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="footer__link">Inicio</a></li>
+                                            <li><a href="#" class="footer__link">Características</a></li>
+                                            <li><a href="#" class="footer__link">Servicio</a></li>
+                                            <li><a href="#" class="footer__link">Acerca de Nosotros</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <h6 class="footer__title">Empresa</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="footer__link">Gestión</a></li>
+                                            <li><a href="#" class="footer__link">Nuestra Historia</a></li>
+                                            <li><a href="#" class="footer__link">Carreras</a></li>
+                                            <li><a href="#" class="footer__link">Asociaciones</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-md-4 mt-4 mt-md-0">
+                                        <h6 class="footer__title">Soporte</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="footer__link">Centro de Soporte</a></li>
+                                            <li><a href="#" class="footer__link">Transacciones</a></li>
+                                            <li><a href="#" class="footer__link">Política de Privacidad</a></li>
+                                            <li><a href="#" class="footer__link">Contáctanos</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+        </main>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
