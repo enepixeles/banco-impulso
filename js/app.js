@@ -1,6 +1,35 @@
 $(document).ready(function() {
 
-    // --- BBDD ---
+    // FUNCIÓN PARA TRAER VALORES DE LA API - PORTAFOLIO MÓDULO 5
+    // Con esto me conecto a Mindicador.cl para sacar los valores del día
+    function obtenerIndicadores() {
+        $.ajax({
+            url: 'https://mindicador.cl/api',
+            method: 'GET',
+            dataType: 'json',
+            success: function(datos) {
+                // Aquí ya recibí la respuesta. Ahora saco los valores específicos que me interesan.
+                const dolarHoy = datos.dolar.valor;
+                const ufHoy = datos.uf.valor;
+
+                // Actualizo el HTML con los valores reales, dándoles formato de moneda chilena.
+                // Uso toLocaleString para que el punto de los miles aparezca donde corresponde.
+                $('#valor-dolar').text('$' + dolarHoy.toLocaleString('es-CL'));
+                $('#valor-uf').text('$' + ufHoy.toLocaleString('es-CL'));
+            },
+            error: function() {
+                // Si el internet falla o la API se cae, puse este mensaje para no dejar el "Cargando..." eterno
+                $('#valor-dolar').text('Error al cargar');
+                $('#valor-uf').text('Error al cargar');
+            }
+        });
+    }
+
+    // Llamo a la función de inmediato para que los datos aparezcan apenas abra la página
+    obtenerIndicadores();
+
+
+    // --- BBDD ---PORTAFOLIO MÓDULO 4
     // Info de cada persona para que el sitio cambie
     const baseDeDatosUsuarios = {
         "Andrés": {
