@@ -1,6 +1,6 @@
 # Banco Impulso - La Tribu 🚀
 
-Este sitio es una herramienta financiera diseñada para padres de niños con TDAH/TEA. 
+Este sitio es una herramienta financiera diseñada para padres de niños con TDAH/TEA. Enlazado con el blog La tribu.
 El objetivo es ayudarles a manejar el dinero de forma consciente, evitando la impulsividad.
 
 ### Cómo empezar:
