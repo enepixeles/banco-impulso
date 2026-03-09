@@ -1,4 +1,17 @@
 @import 'abstracts/variables';
-@import 'abstracts/mixins';
 @import 'base/reset';
 @import 'layout/page';
+@import 'pages/exercise';
+
+// Estilos del footer que ya tenías
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 40px;
+    margin-top: 50px;
+    
+    &__link {
+        color: #888 !important;
+        &:hover { color: #fff !important; }
+    }
+}

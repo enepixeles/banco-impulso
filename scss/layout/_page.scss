@@ -1,18 +1,26 @@
+/* 
+MI ESTRUCTURA DE PÁGINA:
+1. Dashboard: El contenedor maestro que organiza el menú y el contenido.
+2. Sidebar: Mi barra lateral que se adapta según el tamaño de la pantalla.
+3. Content: El área donde Vue inyecta toda la información financiera.
+*/
+
 .dashboard {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; // En el celu, pongo todo hacia abajo
     min-height: 100vh;
-    background-color: #f9fbfb;
+    background-color: $color-fondo;
 
     @media (min-width: 992px) {
-        flex-direction: row;
+        flex-direction: row; // En el computador, pongo el menú al lado del contenido
     }
 }
 
 .sidebar {
-    background-color: #ffffff;
+    background-color: $color-blanco;
     border-right: 1px solid #eeeeee;
 
+    // Ajustes para cuando el menú está fijo en pantallas grandes (Desktop)
     @media (min-width: 992px) {
         width: 280px;
         min-width: 280px;
@@ -20,12 +28,26 @@
         position: sticky;
         top: 0;
         display: block !important;
+        visibility: visible !important;
+        transform: none !important; // Evito que Bootstrap lo oculte en PC
     }
 
     &__logo {
-        &-icon { font-size: 2.2rem; color: #333; transform: rotate(-15deg); }
-        &-title { font-weight: 800; font-size: 1.3rem; color: #222; }
-        &-subtitle { font-weight: 300; font-size: 0.85rem; color: #666; }
+        &-icon { 
+            font-size: 2.2rem; 
+            color: #333; 
+            transform: rotate(-15deg); 
+        }
+        &-title { 
+            font-weight: 800; 
+            font-size: 1.3rem; 
+            color: #222; 
+        }
+        &-subtitle { 
+            font-weight: 300; 
+            font-size: 0.85rem; 
+            color: #666; 
+        }
     }
 
     &__section-title {
@@ -49,75 +71,35 @@
         color: #444444 !important;
         transition: all 0.2s ease;
 
-        i { margin-right: 12px; font-size: 1.2rem; color: #777; }
+        &:hover { 
+            background-color: #f0f0f0; 
+            color: #000000 !important; 
+        }
 
-        &:hover { background-color: #f0f0f0; color: #000000 !important; }
-
+        // Estilo para cuando la ruta está activa en Vue Router
         &--active {
-            background-color: #00332c !important;
-            color: #ffffff !important;
-            i { color: #ffffff !important; }
+            background-color: $color-primario !important;
+            color: $color-blanco !important;
+            
             &:hover {
-                color: #ffffff !important; 
-                background-color: #002621 !important;
+                background-color: darken($color-primario, 5%) !important;
             }
         }
     }
 }
 
 .dashboard__content {
-    flex: 1;
+    flex: 1; // Yo le digo que ocupe todo el espacio que sobra a la derecha
     padding: 1.5rem;
     overflow-x: hidden;
+    min-width: 0; // Esto es un truco para que el contenido no se me arranque del contenedor
 
     @media (min-width: 992px) {
         padding: 2.5rem;
     }
 }
 
-.header-btn {
-    background-color: #ffffff !important;
-    border: 1px solid #e0e0e0 !important;
-    width: 45px;
-    height: 45px;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50% !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-
-    i {
-        color: #333333 !important;
-        font-size: 1.1rem;
-    }
-
-    &:hover {
-        background-color: #f8f9fa !important;
-        transform: translateY(-2px);
-    }
-}
-
-.hero-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 1.8rem;
-    color: #2c2c2c;
-    line-height: 1.3;
-    margin-bottom: 2rem;
-
-    @media (min-width: 992px) { font-size: 2.5rem; }
-}
-
-.card {
-    border-radius: 20px !important;
-    h2 {
-        font-size: 1.7rem !important;
-        white-space: nowrap;
-        margin: 10px 0;
-    }
-}
-
+// Estilos del footer que restauramos
 .footer {
     background-color: #000000;
     color: #ffffff;
@@ -126,14 +108,37 @@
     width: 100%;
     border-radius: 0;
 
-    &__subtitle { font-weight: 300; opacity: 0.8; }
-    &__copy p { color: #666; font-size: 0.85rem; }
-    &__title { font-weight: 600; margin-bottom: 20px; }
+    &__subtitle { 
+        font-weight: 300; 
+        opacity: 0.8; 
+    }
+    
+    &__copy p { 
+        color: #666; 
+        font-size: 0.85rem; 
+    }
+    
+    &__title { 
+        font-weight: 600; 
+        margin-bottom: 20px; 
+    }
+    
     &__link {
         text-decoration: none !important;
         color: #888 !important;
         display: block;
         margin-bottom: 10px;
-        &:hover { color: #fff !important; }
+        &:hover { 
+            color: #fff !important; 
+        }
+    }
+
+    &__socials {
+        i {
+            font-size: 1.2rem;
+            color: #ffffff;
+            opacity: 0.8;
+            &:hover { opacity: 1; }
+        }
     }
 }

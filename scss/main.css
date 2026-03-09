@@ -1,8 +1,4 @@
-a {
-  text-decoration: none !important;
-  color: inherit;
-}
-
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -12,9 +8,20 @@ a {
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f9fbfb;
-  color: #333;
+  color: #333333;
 }
 
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* 
+MI ESTRUCTURA DE PÁGINA:
+1. Dashboard: El contenedor maestro que organiza el menú y el contenido.
+2. Sidebar: Mi barra lateral que se adapta según el tamaño de la pantalla.
+3. Content: El área donde Vue inyecta toda la información financiera.
+*/
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -39,6 +46,8 @@ body {
     position: sticky;
     top: 0;
     display: block !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 }
 .sidebar__logo-icon {
@@ -76,11 +85,6 @@ body {
   color: #444444 !important;
   transition: all 0.2s ease;
 }
-.sidebar__link i {
-  margin-right: 12px;
-  font-size: 1.2rem;
-  color: #777;
-}
 .sidebar__link:hover {
   background-color: #f0f0f0;
   color: #000000 !important;
@@ -89,67 +93,20 @@ body {
   background-color: #00332c !important;
   color: #ffffff !important;
 }
-.sidebar__link--active i {
-  color: #ffffff !important;
-}
 .sidebar__link--active:hover {
-  color: #ffffff !important;
-  background-color: #002621 !important;
+  background-color: rgb(0, 25.5, 22) !important;
 }
 
 .dashboard__content {
   flex: 1;
   padding: 1.5rem;
   overflow-x: hidden;
+  min-width: 0;
 }
 @media (min-width: 992px) {
   .dashboard__content {
     padding: 2.5rem;
   }
-}
-
-.header-btn {
-  background-color: #ffffff !important;
-  border: 1px solid #e0e0e0 !important;
-  width: 45px;
-  height: 45px;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50% !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-.header-btn i {
-  color: #333333 !important;
-  font-size: 1.1rem;
-}
-.header-btn:hover {
-  background-color: #f8f9fa !important;
-  transform: translateY(-2px);
-}
-
-.hero-title {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 1.8rem;
-  color: #2c2c2c;
-  line-height: 1.3;
-  margin-bottom: 2rem;
-}
-@media (min-width: 992px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-}
-
-.card {
-  border-radius: 20px !important;
-}
-.card h2 {
-  font-size: 1.7rem !important;
-  white-space: nowrap;
-  margin: 10px 0;
 }
 
 .footer {
@@ -177,6 +134,58 @@ body {
   color: #888 !important;
   display: block;
   margin-bottom: 10px;
+}
+.footer__link:hover {
+  color: #fff !important;
+}
+.footer__socials i {
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.8;
+}
+.footer__socials i:hover {
+  opacity: 1;
+}
+
+.hero-title {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+.card {
+  border-radius: 20px !important;
+  border: none !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.card h2 {
+  font-size: 1.7rem !important;
+  margin: 10px 0;
+}
+
+.status--completed {
+  color: #2d7a6e;
+  font-weight: 600;
+}
+.status--failed {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 60px 40px;
+  margin-top: 50px;
+}
+.footer__link {
+  color: #888 !important;
 }
 .footer__link:hover {
   color: #fff !important;

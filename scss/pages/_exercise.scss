@@ -1,49 +1,24 @@
-.table-container {
-    background-color: $color-blanco;
-    border-radius: 20px; 
-    overflow: hidden; 
+.hero-title {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
 
-    &__header {
-        background-color: #1a1a1a; 
-        color: white;
-        
-        th {
-            padding: 1.2rem 1rem !important;
-            border: none;
-            font-weight: 400;
-        }
+    @media (min-width: 992px) { font-size: 2.5rem; }
+}
+
+.card {
+    border-radius: 20px !important;
+    border: none !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    
+    h2 {
+        font-size: 1.7rem !important;
+        margin: 10px 0;
     }
 }
 
 .status {
     &--completed { color: #2d7a6e; font-weight: 600; }
     &--failed { color: #e74c3c; font-weight: 600; }
-}
-
-.export-pdf {
-    text-decoration: none;
-    color: #666;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    i {
-        font-size: 1.1rem;
-        color: #444;
-    }
-
-    &:hover {
-        color: black;
-    }
-}
-
-.icon-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
 }
